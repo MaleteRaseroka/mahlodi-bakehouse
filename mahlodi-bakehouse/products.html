@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bakery Products | Bread, Pastries, Cakes & Custom Orders | Mahlodi Bakehouse</title>
+  <meta name="description" content="Search our bread, pastries, celebration cakes and custom orders. Filter by category or price and request a quote from Mahlodi Bakehouse in Pretoria.">
+  <link rel="canonical" href="https://maleteraseroka.github.io/mahlodi-bakehouse/products.html">
+  <!-- Open Graph tags: preview when the page is shared on social media -->
+  <meta property="og:title" content="Bakery Products | Bread, Pastries, Cakes & Custom Orders | Mahlodi Bakehouse">
+  <meta property="og:description" content="Search our bread, pastries, celebration cakes and custom orders. Filter by category or price and request a quote from Mahlodi Bakehouse in Pretoria.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maleteraseroka.github.io/mahlodi-bakehouse/products.html">
+  <meta property="og:image" content="https://maleteraseroka.github.io/mahlodi-bakehouse/images/hero-bakery-1200.jpg">
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🥖&lt;/text&gt;&lt;/svg&gt;">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Header and main navigation (same on every page) -->
+  <header>
+    <h1><a href="index.html">Mahlodi Bakehouse</a></h1>
+    <nav aria-label="Main navigation"><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="products.html" aria-current="page">Products</a></li><li><a href="enquiry.html">Enquiry</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+  </header>
+
+  <main id="main">
+    <h2>Our Products</h2>
+    <p>Search, filter and sort our range, then request a quote for your order.</p>
+
+    <!-- Search / filter / sort toolbar (handled by js/products.js) -->
+    <form class="toolbar" role="search" aria-label="Search products" onsubmit="return false">
+      <div class="field"><label for="search">Search</label><input type="search" id="search" placeholder="e.g. croissant, chocolate"></div>
+      <div class="field"><label for="category">Category</label>
+        <select id="category"><option value="all">All</option><option>Bread</option><option>Pastries</option><option>Cakes</option><option>Custom</option></select></div>
+      <div class="field"><label for="sort">Sort by</label>
+        <select id="sort"><option value="name">Name (A-Z)</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option></select></div>
+      <div>
+        <div class="field check"><input type="checkbox" id="available"><label for="available">Available only</label></div>
+        <button type="button" class="secondary" id="clear">Clear</button>
+      </div>
+    </form>
+
+    <p id="status" role="status" aria-live="polite">Loading products...</p>
+    <div id="product-grid" class="card-grid"></div>
+
+    <dialog id="product-dialog" aria-labelledby="dlg-title">
+      <img src="" alt="" width="800" height="600">
+      <h2 id="dlg-title"></h2>
+      <p data-desc></p>
+      <p><strong data-price></strong></p>
+      <div class="dialog-actions">
+        <a class="btn" href="enquiry.html">Request a quote</a>
+        <button type="button" class="secondary" data-close>Close</button>
+      </div>
+    </dialog>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <section>
+        <h2>Opening hours</h2>
+        <p>Mon-Fri: 06:30 - 17:30<br>Saturday: 07:00 - 14:00<br>Sunday: Closed</p>
+      </section>
+      <section>
+        <h2>Visit us</h2>
+        <p>14 Burnett Street, Hatfield<br>220 Lois Avenue, Menlyn<br>Pretoria, South Africa</p>
+      </section>
+      <section>
+        <h2>Get in touch</h2>
+        <p>Tel: <a href="tel:+27125550142">012 555 0142</a><br>Email: <a href="mailto:hello@mahlodibakehouse.co.za">hello@mahlodibakehouse.co.za</a></p>
+      </section>
+    </div>
+    <p class="copyright">&copy; <span id="year">2026</span> Mahlodi Bakehouse. A fictional business created for the WEDE5020 portfolio of evidence. Photo credits are listed in the project README.</p>
+  </footer>
+<script src="js/main.js" defer></script>
+<script src="js/data.js" defer></script>
+<script src="js/products.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+{
+  "deliveryFee": 80,
+  "bulkThreshold": 20,
+  "bulkDiscount": 0.1,
+  "products": [
+    {
+      "id": "sourdough",
+      "name": "Sourdough Loaf",
+      "price": 45,
+      "unit": "each",
+      "leadDays": 1,
+      "maxPerDay": 60
+    },
+    {
+      "id": "seeded",
+      "name": "Seeded Brown Loaf",
+      "price": 38,
+      "unit": "each",
+      "leadDays": 1,
+      "maxPerDay": 60
+    },
+    {
+      "id": "rolls",
+      "name": "Soft Dinner Rolls",
+      "price": 36,
+      "unit": "per 6 rolls",
+      "leadDays": 1,
+      "maxPerDay": 50
+    },
+    {
+      "id": "croissant",
+      "name": "Butter Croissant",
+      "price": 22,
+      "unit": "each",
+      "leadDays": 1,
+      "maxPerDay": 80
+    },
+    {
+      "id": "vetkoek",
+      "name": "Mince Vetkoek",
+      "price": 28,
+      "unit": "each",
+      "leadDays": 1,
+      "maxPerDay": 60
+    },
+    {
+      "id": "eclair",
+      "name": "Chocolate Eclair",
+      "price": 30,
+      "unit": "each",
+      "leadDays": 2,
+      "maxPerDay": 40
+    },
+    {
+      "id": "chocolate-cake",
+      "name": "Chocolate Celebration Cake",
+      "price": 320,
+      "unit": "per cake",
+      "leadDays": 3,
+      "maxPerDay": 5
+    },
+    {
+      "id": "red-velvet",
+      "name": "Red Velvet Cake",
+      "price": 350,
+      "unit": "per cake",
+      "leadDays": 3,
+      "maxPerDay": 5
+    },
+    {
+      "id": "birthday-cake",
+      "name": "Custom Birthday Cake",
+      "price": 480,
+      "unit": "per cake",
+      "leadDays": 7,
+      "maxPerDay": 3
+    },
+    {
+      "id": "corporate-box",
+      "name": "Office Treat Box",
+      "price": 650,
+      "unit": "per box of 20",
+      "leadDays": 3,
+      "maxPerDay": 10
+    }
+  ]
+}

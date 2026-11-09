@@ -1,0 +1,198 @@
+/* ==========================================================
+   Mahlodi Bakehouse - style.css
+   WEDE5020 PoE (Part 2 desktop + responsive, Part 3 additions)
+   ========================================================== */
+
+/* ---------- 1. Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; display: block; }
+ul { list-style: none; }
+
+/* ---------- 2. Base style (colour palette from Part 1) ---------- */
+:root {
+  --cream: #FFF8ED;
+  --brown: #5C4033;
+  --orange: #D97736;
+  --orange-dark: #A8501B;   /* darker orange so white button text is readable */
+  --text: #2B2118;
+  --white: #FFFFFF;
+  --radius: 0.5rem;
+  --shadow: 0 2px 8px rgba(43, 33, 24, 0.15);
+}
+html { font-size: 100%; scroll-behavior: smooth; }
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ---------- 3. Typography (rem scale) ---------- */
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; color: var(--brown); line-height: 1.25; }
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+p { margin-bottom: 1rem; }
+a { color: var(--orange-dark); }
+a:hover, a:focus { color: var(--brown); }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+
+/* ---------- 4. Layout: header / nav (Flexbox) ---------- */
+.skip-link { position: absolute; left: -999px; background: var(--white); padding: 0.5rem 1rem; }
+.skip-link:focus { left: 0.5rem; top: 0.5rem; z-index: 100; }
+header {
+  background: var(--brown);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 5%;
+}
+header h1 a { color: var(--white); text-decoration: none; font-size: 1.6rem; }
+nav ul { display: flex; gap: 1.5rem; }
+nav a { color: var(--white); text-decoration: none; font-weight: 600; padding: 0.5rem 0.25rem; border-bottom: 3px solid transparent; }
+nav a:hover, nav a:focus { border-bottom-color: var(--orange); color: var(--white); }
+nav a[aria-current="page"] { border-bottom-color: var(--orange); }
+
+main { max-width: 75rem; margin: 0 auto; padding: 2rem 5%; }
+section { margin-bottom: 2.5rem; }
+
+/* ---------- 5. Hero (Grid with grid-template-areas) ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "text image";
+  gap: 2rem;
+  align-items: center;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.hero-text  { grid-area: text; }
+.hero-image { grid-area: image; border-radius: var(--radius); }
+
+/* ---------- 6. Cards (3-column Grid) ---------- */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.card {
+  background: var(--white);
+  border-top: 4px solid var(--orange);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.card img { border-radius: var(--radius); margin-bottom: 0.75rem; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.card .price { font-weight: 700; color: var(--brown); margin-top: auto; }
+.badge { display: inline-block; font-size: 0.8rem; background: var(--cream); border: 1px solid var(--orange); border-radius: 1rem; padding: 0 0.6rem; margin-bottom: 0.5rem; width: fit-content; }
+.badge.out { border-color: #999; color: #555; }
+
+/* ---------- 7. Buttons & links (:hover :focus :active) ---------- */
+.btn, button {
+  display: inline-block;
+  background: var(--orange-dark);
+  color: var(--white);
+  border: 2px solid var(--orange-dark);
+  border-radius: var(--radius);
+  padding: 0.7rem 1.4rem;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+.btn:hover, button:hover, .btn:focus, button:focus { background: var(--brown); border-color: var(--brown); color: var(--white); }
+.btn:active, button:active { transform: scale(0.97); }
+button.secondary { background: transparent; color: var(--brown); border-color: var(--brown); }
+button.secondary:hover { background: var(--brown); color: var(--white); }
+
+/* ---------- 8. Forms ---------- */
+form { background: var(--white); padding: 1.5rem; border-radius: var(--radius); box-shadow: var(--shadow); }
+.field { display: flex; flex-direction: column; margin-bottom: 1rem; }
+label { font-weight: 600; margin-bottom: 0.25rem; }
+input, select, textarea {
+  font: inherit;
+  padding: 0.6rem;
+  border: 2px solid #c9b8a8;
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--text);
+}
+input:hover, select:hover, textarea:hover { border-color: var(--brown); }
+input:focus, select:focus, textarea:focus { border-color: var(--orange); outline: none; box-shadow: 0 0 0 3px rgba(217, 119, 54, 0.3); }
+input[type="checkbox"] { width: 1.2rem; height: 1.2rem; }
+.check { flex-direction: row; align-items: center; gap: 0.5rem; }
+.check label { margin: 0; }
+.field.invalid input, .field.invalid select, .field.invalid textarea { border-color: #B00020; background: #FFF1F1; }
+.error { color: #B00020; font-size: 0.9rem; min-height: 1.2rem; }
+.hint { font-size: 0.85rem; color: #6b5a4d; }
+.result { background: var(--white); border-left: 6px solid var(--orange); border-radius: var(--radius); padding: 1.25rem; margin-top: 1.5rem; box-shadow: var(--shadow); }
+.result.bad { border-left-color: #B00020; }
+.result li { margin-left: 1.25rem; list-style: disc; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+
+/* ---------- 9. Part 3 widgets ---------- */
+/* Tabs */
+[role="tablist"] { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+[role="tab"] { background: var(--white); color: var(--brown); border-color: var(--brown); }
+[role="tab"][aria-selected="true"] { background: var(--brown); color: var(--white); }
+[role="tabpanel"] { background: var(--white); padding: 1.5rem; border-radius: var(--radius); box-shadow: var(--shadow); }
+[role="tabpanel"][hidden] { display: none; }
+/* Accordion (details/summary) */
+details { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 0.75rem; }
+summary { cursor: pointer; padding: 1rem; font-weight: 700; color: var(--brown); }
+summary:hover { color: var(--orange-dark); }
+details[open] summary { border-bottom: 1px solid var(--cream); }
+details p { padding: 1rem; margin: 0; animation: fadeIn 0.4s ease; }
+/* Gallery + lightbox */
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.gallery button { padding: 0; border: 0; background: none; border-radius: var(--radius); overflow: hidden; }
+.gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 0.4s ease; }
+.gallery button:hover img, .gallery button:focus img { transform: scale(1.08); }
+dialog { margin: auto; border: 0; border-radius: var(--radius); padding: 1.25rem; max-width: min(90vw, 50rem); width: 100%; background: var(--white); color: var(--text); }
+dialog::backdrop { background: rgba(43, 33, 24, 0.75); }
+dialog img { margin: 0 auto 0.75rem; max-height: 65vh; width: auto; border-radius: var(--radius); }
+.dialog-actions { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+/* Product toolbar */
+.toolbar { display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 1rem; align-items: end; margin-bottom: 1rem; }
+/* Map */
+#map { height: 22rem; border-radius: var(--radius); box-shadow: var(--shadow); z-index: 0; }
+/* Scroll reveal animation */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ---------- 10. Footer ---------- */
+footer { background: var(--brown); color: var(--white); padding: 2rem 5%; margin-top: 2rem; }
+footer a { color: #FFD9B8; }
+.footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+footer h2 { color: var(--white); font-size: 1.15rem; }
+.copyright { text-align: center; margin-top: 1.5rem; font-size: 0.85rem; }
+
+/* ---------- 11. Responsive: Tablet (up to 1023px) ---------- */
+@media (max-width: 1023px) {
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.5rem; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .toolbar { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- 12. Responsive: Mobile (up to 767px) ---------- */
+@media (max-width: 767px) {
+  header { flex-direction: column; text-align: center; gap: 0.5rem; }
+  nav ul { flex-direction: column; gap: 0; width: 100%; }
+  nav a { display: block; padding: 0.9rem 1rem; }   /* larger tap targets */
+  .hero { grid-template-columns: 1fr; grid-template-areas: "image" "text"; padding: 1rem; }
+  .card-grid, .gallery, .footer-grid, .two-col, .toolbar { grid-template-columns: 1fr; }
+  .btn, button { width: 100%; text-align: center; }
+  .dialog-actions button { width: auto; }
+  [role="tab"] { flex: 1 1 100%; }
+  #map { height: 18rem; }
+}

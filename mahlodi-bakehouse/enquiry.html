@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Enquiry & Instant Quote | Mahlodi Bakehouse</title>
+  <meta name="description" content="Ask about bread, pastries, cakes or a custom order. Fill in the Mahlodi Bakehouse enquiry form to get an instant cost estimate and availability.">
+  <link rel="canonical" href="https://maleteraseroka.github.io/mahlodi-bakehouse/enquiry.html">
+  <!-- Open Graph tags: preview when the page is shared on social media -->
+  <meta property="og:title" content="Product Enquiry & Instant Quote | Mahlodi Bakehouse">
+  <meta property="og:description" content="Ask about bread, pastries, cakes or a custom order. Fill in the Mahlodi Bakehouse enquiry form to get an instant cost estimate and availability.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maleteraseroka.github.io/mahlodi-bakehouse/enquiry.html">
+  <meta property="og:image" content="https://maleteraseroka.github.io/mahlodi-bakehouse/images/hero-bakery-1200.jpg">
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🥖&lt;/text&gt;&lt;/svg&gt;">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Header and main navigation (same on every page) -->
+  <header>
+    <h1><a href="index.html">Mahlodi Bakehouse</a></h1>
+    <nav aria-label="Main navigation"><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="products.html">Products</a></li><li><a href="enquiry.html" aria-current="page">Enquiry</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+  </header>
+
+  <main id="main">
+    <h2>Product Enquiry</h2>
+    <p>Tell us what you need and we will show an estimated cost and whether we can have it ready on your date. Use the <a href="contact.html">Contact page</a> for general messages.</p>
+
+    <form id="enquiry-form" action="enquiry.html" method="get" novalidate>
+      <div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required><span class="error" aria-live="polite"></span></div>
+      <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required><span class="error" aria-live="polite"></span></div>
+      <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="082 123 4567" required><span class="hint">South African number, e.g. 082 123 4567 or +27 82 123 4567</span><span class="error" aria-live="polite"></span></div>
+      <div class="field"><label for="type">Enquiry type</label>
+        <select id="type" name="type" required><option value="">Choose...</option><option>Everyday order</option><option>Custom cake</option><option>Business / bulk order</option><option>Event or celebration</option></select><span class="error" aria-live="polite"></span></div>
+      <div class="field"><label for="product">Product</label>
+        <select id="product" name="product" required><option value="">Choose...</option></select><span class="error" aria-live="polite"></span></div>
+      <div class="field"><label for="quantity">Quantity</label><input id="quantity" name="quantity" type="number" min="1" max="500" step="1" value="1" required><span class="hint">Orders of 20 or more get 10% off.</span><span class="error" aria-live="polite"></span></div>
+      <div class="field"><label for="date">Date needed</label><input id="date" name="date" type="date" required><span class="error" aria-live="polite"></span></div>
+      <div class="field check"><input id="delivery" name="delivery" type="checkbox"><label for="delivery">Deliver in Pretoria (R80)</label><span class="error" aria-live="polite"></span></div>
+      <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="4" maxlength="500" required placeholder="Flavours, colours, allergies, extra details..."></textarea><span class="error" aria-live="polite"></span></div>
+      <button type="submit">Get my quote</button> <button type="reset" class="secondary">Clear form</button>
+    </form>
+
+    <section id="quote-result" class="result" hidden aria-live="polite"></section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <section>
+        <h2>Opening hours</h2>
+        <p>Mon-Fri: 06:30 - 17:30<br>Saturday: 07:00 - 14:00<br>Sunday: Closed</p>
+      </section>
+      <section>
+        <h2>Visit us</h2>
+        <p>14 Burnett Street, Hatfield<br>220 Lois Avenue, Menlyn<br>Pretoria, South Africa</p>
+      </section>
+      <section>
+        <h2>Get in touch</h2>
+        <p>Tel: <a href="tel:+27125550142">012 555 0142</a><br>Email: <a href="mailto:hello@mahlodibakehouse.co.za">hello@mahlodibakehouse.co.za</a></p>
+      </section>
+    </div>
+    <p class="copyright">&copy; <span id="year">2026</span> Mahlodi Bakehouse. A fictional business created for the WEDE5020 portfolio of evidence. Photo credits are listed in the project README.</p>
+  </footer>
+<script src="js/main.js" defer></script>
+<script src="js/validate.js" defer></script>
+<script src="js/data.js" defer></script>
+<script src="js/enquiry.js" defer></script>
+</body>
+</html>

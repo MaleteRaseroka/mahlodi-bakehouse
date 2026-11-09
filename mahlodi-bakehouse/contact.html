@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Mahlodi Bakehouse | Hatfield & Menlyn, Pretoria</title>
+  <meta name="description" content="Contact Mahlodi Bakehouse in Pretoria. Find our Hatfield and Menlyn shops on the map, see opening hours and send us a message.">
+  <link rel="canonical" href="https://maleteraseroka.github.io/mahlodi-bakehouse/contact.html">
+  <!-- Open Graph tags: preview when the page is shared on social media -->
+  <meta property="og:title" content="Contact Mahlodi Bakehouse | Hatfield & Menlyn, Pretoria">
+  <meta property="og:description" content="Contact Mahlodi Bakehouse in Pretoria. Find our Hatfield and Menlyn shops on the map, see opening hours and send us a message.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maleteraseroka.github.io/mahlodi-bakehouse/contact.html">
+  <meta property="og:image" content="https://maleteraseroka.github.io/mahlodi-bakehouse/images/hero-bakery-1200.jpg">
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🥖&lt;/text&gt;&lt;/svg&gt;">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Header and main navigation (same on every page) -->
+  <header>
+    <h1><a href="index.html">Mahlodi Bakehouse</a></h1>
+    <nav aria-label="Main navigation"><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="products.html">Products</a></li><li><a href="enquiry.html">Enquiry</a></li><li><a href="contact.html" aria-current="page">Contact</a></li></ul></nav>
+  </header>
+
+  <main id="main">
+    <h2>Contact Us</h2>
+    <div class="two-col">
+      <section>
+        <h3>Send us a message</h3>
+        <!-- action uses mailto; js/contact.js validates first and builds the email -->
+        <form id="contact-form" action="mailto:hello@mahlodibakehouse.co.za" method="post" enctype="text/plain" novalidate>
+          <div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required><span class="error" aria-live="polite"></span></div>
+          <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required><span class="error" aria-live="polite"></span></div>
+          <div class="field"><label for="phone">Phone number (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="082 123 4567"><span class="error" aria-live="polite"></span></div>
+          <div class="field"><label for="topic">Message type</label>
+            <select id="topic" name="topic" required><option value="">Choose...</option><option>General question</option><option>Feedback</option><option>Complaint</option><option>Job or partnership</option></select><span class="error" aria-live="polite"></span></div>
+          <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" type="text" maxlength="80" required><span class="error" aria-live="polite"></span></div>
+          <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="5" maxlength="1000" required></textarea><span class="hint" id="count">0 / 1000</span><span class="error" aria-live="polite"></span></div>
+          <button type="submit">Prepare email</button> <button type="reset" class="secondary">Clear form</button>
+        </form>
+        <section id="email-preview" class="result" hidden>
+          <h3>Your email is ready</h3>
+          <p><strong>To:</strong> <span data-to></span><br><strong>Subject:</strong> <span data-subject></span></p>
+          <pre data-body style="white-space:pre-wrap;font:inherit"></pre>
+          <a class="btn" href="#">Open in my email app and send</a>
+        </section>
+      </section>
+      <section>
+        <h3>Find us</h3>
+        <div id="map" role="region" aria-label="Map showing the Hatfield and Menlyn shops"></div>
+        <p class="hint">Map data &copy; OpenStreetMap contributors. Both shops are fictional.</p>
+        <h3>Opening hours</h3>
+        <p>Mon-Fri: 06:30 - 17:30<br>Saturday: 07:00 - 14:00<br>Sunday: Closed</p>
+        <p>Tel: <a href="tel:+27125550142">012 555 0142</a><br>Email: <a href="mailto:hello@mahlodibakehouse.co.za">hello@mahlodibakehouse.co.za</a></p>
+      </section>
+    </div>
+
+    <section class="reveal">
+      <h2>Frequently Asked Questions</h2>
+      <div data-accordion>
+      <details><summary>Do you deliver?</summary><p>Yes. We deliver within Pretoria for R80 per order. Choose the delivery option on the enquiry form.</p></details>
+      <details><summary>How far ahead must I order a custom cake?</summary><p>Custom cakes need at least 7 days notice. Celebration cakes need 3 days.</p></details>
+      <details><summary>Can you cater for allergies?</summary><p>Tell us about any allergies in your message. We bake with nuts, wheat, eggs and dairy, so we cannot guarantee allergen-free products.</p></details>
+      <details><summary>Do you take payments online?</summary><p>Not yet. You pay when you collect or receive your order.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <section>
+        <h2>Opening hours</h2>
+        <p>Mon-Fri: 06:30 - 17:30<br>Saturday: 07:00 - 14:00<br>Sunday: Closed</p>
+      </section>
+      <section>
+        <h2>Visit us</h2>
+        <p>14 Burnett Street, Hatfield<br>220 Lois Avenue, Menlyn<br>Pretoria, South Africa</p>
+      </section>
+      <section>
+        <h2>Get in touch</h2>
+        <p>Tel: <a href="tel:+27125550142">012 555 0142</a><br>Email: <a href="mailto:hello@mahlodibakehouse.co.za">hello@mahlodibakehouse.co.za</a></p>
+      </section>
+    </div>
+    <p class="copyright">&copy; <span id="year">2026</span> Mahlodi Bakehouse. A fictional business created for the WEDE5020 portfolio of evidence. Photo credits are listed in the project README.</p>
+  </footer>
+<script src="js/main.js" defer></script>
+<script src="js/validate.js" defer></script>
+<script src="js/contact.js" defer></script>
+</body>
+</html>
